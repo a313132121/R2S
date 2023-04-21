@@ -1,0 +1,21 @@
+# 内容：远程桌面软件 
+# 数量：9条 
+
+#Windows-Oray 
+进程名称，devcon.exe 
+进程名称，DriverInstaller.exe 
+进程名称，CrashReport.exe 
+进程名称，SunloginClient.exe 
+
+#Windows-ToDesk 
+进程名称，ToDesk_Setup.exe 
+进程名称，ToDesk_Session.exe 
+进程名称，ToDesk_Service.exe 
+进程名称，ToDesk.exe 
+
+#Windows 系统 
+进程名称，mstsc.exe 
+
+＃苹果系统 
+
+#Linux
