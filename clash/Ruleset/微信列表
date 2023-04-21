@@ -1,0 +1,25 @@
+# 内容：Wechat 微信 
+# 数量：22条 
+用户代理，微信* 
+USER-AGENT,微信* 
+域名后缀,qlogo.cn 
+DOMAIN - SUFFIX , qpic . cn 
+DOMAIN - SUFFIX , weixin . qq 
+域名后缀,wxapp.tc.qq.com 
+域名后缀,servicewechat.com 
+域名后缀,tenpay.com 
+域名后缀,wechat.com 
+域名后缀,wechatlegal.net 
+域名后缀,wechatpay.com 
+DOMAIN-SUFFIX,weixin.com 
+域名后缀，weixinbridge.com 
+域名后缀,weixinsxy.com 
+IP-CIDR,101.32.104.4/32,无解析 
+IP-CIDR,101.32.104.41/32,无解析 
+IP-CIDR,101.32.104.56/32,无解析 
+IP-CIDR,101.32.118.25/32,无解析 
+IP-CIDR,101.32.133.16/32,无解析 
+IP-CIDR,101.32.133.53/32,无解析 
+IP-CIDR,101.32.133.209/32,无解析 
+IP-CIDR,129.226.3.47/32,无解析 
+IP-CIDR,129.226.107.244/32,无解
