@@ -112,7 +112,7 @@ proxies:
 #锚点
 DY: &DY
     type: http
-    url: "https://dy.jimao.icu/api/v1/client/subscribe?token=7d28ea0d4d99f7e7cdb3de1b764aff8a"
+    url: "https://sanfen003.xyz/api/v1/client/subscribe?token=075ea7d2cdac67fc271b165426ba3dab&flag=clash"
     health-check:
       enable: true
       interval: 600
