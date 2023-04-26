@@ -1,3 +1,4 @@
+#自己改的原版是CFW_pre.yaml
 mixed-port: 7890
 allow-lan: false
 mode: rule
