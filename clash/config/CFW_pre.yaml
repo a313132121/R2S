@@ -112,7 +112,7 @@ proxies:
 #锚点
 DY: &DY
     type: http
-    url: "https://happy.papermsg.top/sub?target=clash&url=https%3A%2F%2Fsub-gfwairport1.download%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dcdfe8de1828824cb73bc4d75cb6f914e%7Chttps%3A%2F%2Fdy.jimao.icu%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D7d28ea0d4d99f7e7cdb3de1b764aff8a%7Chttps%3A%2F%2Fsanfen003.xyz%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D075ea7d2cdac67fc271b165426ba3dab%26flag%3Dclash&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FTwoandz9%2FClash%2Fmain%2FACL4SSR_Online_Country_Select_2z.ini&emoji=true&list=false&xudp=false&udp=false&tfo=false&expand=true&scv=false&fdn=false&new_name=true"
+    url: "https://dy.jimao.icu/api/v1/client/subscribe?token=7d28ea0d4d99f7e7cdb3de1b764aff8a"
     health-check:
       enable: true
       interval: 600
