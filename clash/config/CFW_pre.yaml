@@ -112,7 +112,7 @@ proxies:
 #锚点
 DY: &DY
     type: http
-    url: "https://sanfen003.xyz/api/v1/client/subscribe?token=075ea7d2cdac67fc271b165426ba3dab&flag=clash"
+    url: "https://happy.papermsg.top/sub?target=clash&url=https%3A%2F%2Fsub-gfwairport1.download%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dcdfe8de1828824cb73bc4d75cb6f914e%7Chttps%3A%2F%2Fdy.jimao.icu%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D7d28ea0d4d99f7e7cdb3de1b764aff8a%7Chttps%3A%2F%2Fsanfen003.xyz%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D075ea7d2cdac67fc271b165426ba3dab%26flag%3Dclash&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FTwoandz9%2FClash%2Fmain%2FACL4SSR_Online_Country_Select_2z.ini&emoji=true&list=false&xudp=false&udp=false&tfo=false&expand=true&scv=false&fdn=false&new_name=true"
     health-check:
       enable: true
       interval: 600
@@ -133,10 +133,15 @@ pr: &pr
     - 🔗 直连
     - 🚀 全球加速
     - 🇭🇰 香港节点
+    - 🇭🇰 香港自动
     - 🇨🇳 台湾节点
+    - 🇨🇳 台湾自动
     - 🇯🇵 日本节点
+    - 🇯🇵 日本自动
     - 🇸🇬 狮城节点
+    - 🇸🇬 狮城自动
     - 🇺🇸 美国节点
+    - 🇺🇸 美国自动
     - 🇺🇳 全球节点
     - 🚫 拦截
 
@@ -177,7 +182,7 @@ proxy-groups:
   - name: 🚀 全球加速
     type: select
     proxies:
-      - 🇭🇰 香港节点
+      - 🇭🇰 香港节点     
       - 🇨🇳 台湾节点
       - 🇯🇵 日本节点
       - 🇸🇬 狮城节点
@@ -190,31 +195,74 @@ proxy-groups:
     type: select
     use:
       - HK
-
-  - name: 🇨🇳 台湾节点
+  - name: 🇸🇬 狮城节点
     type: select
-    use:
-      - TW
-
+    use:   
+      - SG
+    
   - name: 🇯🇵 日本节点
     type: select
     use:
-      - JP
-
+      - JP         
+      
   - name: 🇺🇸 美国节点
     type: select
     use:
-      - US
-
-  - name: 🇸🇬 狮城节点
+      - US     
+      
+  - name: 🇨🇳 台湾节点
     type: select
     use:
-      - SG
-
+      - TW        
+          
   - name: 🇺🇳 全球节点
     type: select
     use:
-      - UN
+      - UN    
+             
+      
+  - name: 🇭🇰 香港自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50 
+    use:
+      - HK   
+  - name: 🇸🇬 狮城自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50 
+    use:
+      - SG          
+  - name: 🇯🇵 日本自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50 
+    use:
+      - JP  
+  - name: 🇺🇸 美国自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50 
+    use:
+      - US              
+  - name: 🇨🇳 台湾自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50 
+    use:
+      - TW   
+  
+  
+  
+       
+  
+    
+  
 
 #社交
   - name: ✈️ Telegram
