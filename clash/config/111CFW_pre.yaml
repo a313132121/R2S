@@ -126,23 +126,25 @@ c: &c
   interval: 86400
   
 #改下面代理提供商的名字的话，这里面的名字也需要一并修改
-
+#节点前面#号去掉可以添加节点 注意相同的节点都要去掉
 pr: &pr
   type: select
   proxies:
-    - 🔗 直连
+    
     - 🚀 全球加速
-    - 🇭🇰 香港节点
-    - 🇭🇰 香港自动
-    - 🇨🇳 台湾节点
-    - 🇨🇳 台湾自动
-    - 🇯🇵 日本节点
+#    - 🇭🇰 香港节点
+#    - 🇸🇬 狮城节点
+#    - 🇯🇵 日本节点
+#    - 🇺🇸 美国节点
+#    - 🇨🇳 台湾节点
+       
+    - 🇭🇰 香港自动   
+    - 🇨🇳 台湾自动  
     - 🇯🇵 日本自动
-    - 🇸🇬 狮城节点
-    - 🇸🇬 狮城自动
-    - 🇺🇸 美国节点
+    - 🇸🇬 狮城自动  
     - 🇺🇸 美国自动
     - 🇺🇳 全球节点
+    - 🔗 直连
     - 🚫 拦截
 
 proxy-providers:
@@ -182,46 +184,130 @@ proxy-groups:
   - name: 🚀 全球加速
     type: select
     proxies:
-      - 🇭🇰 香港节点     
-      - 🇨🇳 台湾节点
-      - 🇯🇵 日本节点
-      - 🇸🇬 狮城节点
-      - 🇺🇸 美国节点
+#      - 🇭🇰 香港节点 
+#      - 🇸🇬 狮城节点
+#      - 🇯🇵 日本节点
+#      - 🇺🇸 美国节点
+#     - 🇨🇳 台湾节点
+      - 🇭🇰 香港自动   
+      - 🇨🇳 台湾自动  
+      - 🇯🇵 日本自动
+      - 🇸🇬 狮城自动  
+      - 🇺🇸 美国自动 
       - 🇺🇳 全球节点
       - 🔗 直连
+       
+
+#社交   应用自动选择和手动选择节点    <<: *pr这个是自动选择上面的节点  要手动就把手动选择的#去掉加到
+
+  - name: ✈️ Telegram
+    <<: *pr    
+    #type: select 是手动选择
+    #type: select    
+    # proxies:
+  
+
+#流媒体
+  - name: 📺 YouTube
+    <<: *pr
+    
+  - name: 🎶 TikTok
+    <<: *pr  
       
-#分隔，下面是地区分组
+  - name: 🎵 Spotify
+    <<: *pr  
+    #type: select 是手动选择
+    type: select    
+    proxies:
+     - 🇭🇰 香港节点    
+     - 🇯🇵 日本节点
+     - 🇺🇸 美国节点
+    
+#    <<: *pr这个是自动选择上面的节点  要手动就把手动选择的#去掉加到自动选择<<: *pr
+  - name: 🐵 OpenAi
+    #<<: *pr
+    #type: select 是手动选择
+    type: select    
+    proxies:
+     - 🇭🇰 香港节点    
+     - 🇯🇵 日本节点
+  - name: 📺 Netflix
+    <<: *pr
+    
+  - name: 🐹 Disney
+    <<: *pr
+
+  - name: 📺 PrimeVideo
+    <<: *pr
+        
+#流媒体   游戏  
+  - name: 🎮 Game
+    <<: *pr        
+    
+#系统之家
+  - name: ☁️ Google
+    <<: *pr
+    
+  - name: 🍎 Apple
+    <<: *pr
+    
+  - name: 🧩 Microsoft
+    <<: *pr
+
+#基本不改
+      
+  - name: 🇨🇳 国内流量
+    type: select
+    proxies:
+      - 🔗 直连
+      - 🚀 全球加速
+      - 🚫 拦截
+
+  - name: 🔗 直连
+    type: select
+    proxies:
+      - DIRECT
+
+  - name: 🚫 拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - 🚀 全球加速
+      
+#分隔，下面是地区分组  下面是手动节点
   - name: 🇭🇰 香港节点
     type: select
     use:
       - HK
-  - name: 🇸🇬 狮城节点
-    type: select
-    use:   
-      - SG
+#  - name: 🇸🇬 狮城节点
+#    type: select
+#    use:   
+#     - SG
     
   - name: 🇯🇵 日本节点
     type: select
     use:
-      - JP         
+     - JP         
       
   - name: 🇺🇸 美国节点
     type: select
     use:
-      - US     
+     - US     
       
-  - name: 🇨🇳 台湾节点
-    type: select
-    use:
-      - TW        
+#  - name: 🇨🇳 台湾节点
+#    type: select
+#    use:
+#      - TW        
           
   - name: 🇺🇳 全球节点
     type: select
     use:
-      - UN    
-             
+      - UN                  
       
+ #下面是自动节点自己改的
   - name: 🇭🇰 香港自动
+    #type: url-test自动选择 
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -256,72 +342,7 @@ proxy-groups:
     tolerance: 50 
     use:
       - TW   
-  
-  
-  
-       
-  
-    
-  
-
-#社交
-  - name: ✈️ Telegram
-    <<: *pr
-
-  - name: 🎮 Game
-    <<: *pr
-
-#流媒体
-  - name: 📺 YouTube
-    <<: *pr
-
-  - name: 📺 Netflix
-    <<: *pr
-    
-  - name: 🐹 Disney
-    <<: *pr
-
-  - name: 📺 PrimeVideo
-    <<: *pr
-    
-  - name: 🎵 Spotify
-    <<: *pr
-    
-  - name: 🎶 TikTok
-    <<: *pr 
-  - name: 🐵 OpenAi
-    <<: *pr
-    
-#系统之家
-  - name: ☁️ Google
-    <<: *pr
-    
-  - name: 🍎 Apple
-    <<: *pr
-    
-  - name: 🧩 Microsoft
-    <<: *pr
-
-#基本不改
-      
-  - name: 🇨🇳 国内流量
-    type: select
-    proxies:
-      - 🔗 直连
-      - 🚀 全球加速
-      - 🚫 拦截
-
-  - name: 🔗 直连
-    type: select
-    proxies:
-      - DIRECT
-
-  - name: 🚫 拦截
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-      - 🚀 全球加速
+          
 
 rule-providers:
 
