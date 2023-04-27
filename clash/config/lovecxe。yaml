@@ -1,0 +1,660 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+dns:
+  enable: true
+  default-nameserver:
+    - 223.5.5.5
+    - 1.0.0.1
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+    - "*.lan"
+    - stun.*.*.*
+    - stun.*.*
+    - time.windows.com
+    - time.nist.gov
+    - time.apple.com
+    - time.asia.apple.com
+    - "*.ntp.org.cn"
+    - "*.openwrt.pool.ntp.org"
+    - time1.cloud.tencent.com
+    - time.ustc.edu.cn
+    - pool.ntp.org
+    - ntp.ubuntu.com
+    - ntp.aliyun.com
+    - ntp1.aliyun.com
+    - ntp2.aliyun.com
+    - ntp3.aliyun.com
+    - ntp4.aliyun.com
+    - ntp5.aliyun.com
+    - ntp6.aliyun.com
+    - ntp7.aliyun.com
+    - time1.aliyun.com
+    - time2.aliyun.com
+    - time3.aliyun.com
+    - time4.aliyun.com
+    - time5.aliyun.com
+    - time6.aliyun.com
+    - time7.aliyun.com
+    - "*.time.edu.cn"
+    - time1.apple.com
+    - time2.apple.com
+    - time3.apple.com
+    - time4.apple.com
+    - time5.apple.com
+    - time6.apple.com
+    - time7.apple.com
+    - time1.google.com
+    - time2.google.com
+    - time3.google.com
+    - time4.google.com
+    - music.163.com
+    - "*.music.163.com"
+    - "*.126.net"
+    - musicapi.taihe.com
+    - music.taihe.com
+    - songsearch.kugou.com
+    - trackercdn.kugou.com
+    - "*.kuwo.cn"
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - joox.com
+    - y.qq.com
+    - "*.y.qq.com"
+    - streamoc.music.tc.qq.com
+    - mobileoc.music.tc.qq.com
+    - isure.stream.qqmusic.qq.com
+    - dl.stream.qqmusic.qq.com
+    - aqqmusic.tc.qq.com
+    - amobile.music.tc.qq.com
+    - "*.xiami.com"
+    - "*.music.migu.cn"
+    - music.migu.cn
+    - "*.msftconnecttest.com"
+    - "*.msftncsi.com"
+    - localhost.ptlogin2.qq.com
+    - "*.*.*.srv.nintendo.net"
+    - "*.*.stun.playstation.net"
+    - xbox.*.*.microsoft.com
+    - "*.ipv6.microsoft.com"
+    - "*.*.xboxlive.com"
+    - speedtest.cros.wr.pvp.net
+  nameserver:
+    - https://223.6.6.6/dns-query
+    - https://rubyfish.cn/dns-query
+    - https://dns.pub/dns-query
+  fallback:
+    - https://dns.rubyfish.cn/dns-query
+    - https://public.dns.iij.jp/dns-query
+    - tls://8.8.4.4
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+      - 127.0.0.1/32
+    domain:
+      - +.google.com
+      - +.facebook.com
+      - +.twitter.com
+      - +.youtube.com
+      - +.xn--ngstr-lra8j.com
+      - +.google.cn
+      - +.googleapis.cn
+      - +.googleapis.com
+      - +.gvt1.com
+proxies:
+  - {name: 距离下次重置剩余：5 天, server: bgroup.node1.t.nodelist-gfwairport1.download, port: 50001, type: trojan, password: 688e91cb-6352-4171-bf7a-73b0b0c0cf73, skip-cert-verify: false}
+  - {name: "Tokyo, Tj - B Group", server: bgroup.node1.t.nodelist-gfwairport1.download, port: 50001, type: trojan, password: 688e91cb-6352-4171-bf7a-73b0b0c0cf73, skip-cert-verify: false}
+  - {name: "Incheon, Tj - B Group", server: bgroup.node2.t.nodelist-gfwairport1.download, port: 50001, type: trojan, password: 688e91cb-6352-4171-bf7a-73b0b0c0cf73, skip-cert-verify: false}
+  - {name: "🇸🇬 Singapore, Tj - B Group", server: bgroup.node3.t.nodelist-gfwairport1.download, port: 50001, type: trojan, password: 688e91cb-6352-4171-bf7a-73b0b0c0cf73, skip-cert-verify: false}
+  - {name: "🇭🇰 Hongkong, Tj - B Group", server: bgroup.node4.t.nodelist-gfwairport1.download, port: 50001, type: trojan, password: 688e91cb-6352-4171-bf7a-73b0b0c0cf73, skip-cert-verify: false}
+  - {name: "California, Tj - B Group", server: bgroup.node5.t.nodelist-gfwairport1.download, port: 50001, type: trojan, password: 688e91cb-6352-4171-bf7a-73b0b0c0cf73, skip-cert-verify: false}
+  - {name: "Tokyo, SS - B Group", server: bgroup.node1.s.nodelist-gfwairport1.download, port: 50001, type: ss, cipher: chacha20-ietf-poly1305, password: 688e91cb-6352-4171-bf7a-73b0b0c0cf73}
+  - {name: "Incheon, SS - B Group", server: bgroup.node2.s.nodelist-gfwairport1.download, port: 50001, type: ss, cipher: chacha20-ietf-poly1305, password: 688e91cb-6352-4171-bf7a-73b0b0c0cf73}
+  - {name: "🇸🇬 Singapore, SS - B Group", server: bgroup.node3.s.nodelist-gfwairport1.download, port: 50001, type: ss, cipher: chacha20-ietf-poly1305, password: 688e91cb-6352-4171-bf7a-73b0b0c0cf73}
+  - {name: "🇭🇰 Hongkong, SS - B Group", server: bgroup.node4.s.nodelist-gfwairport1.download, port: 50001, type: ss, cipher: chacha20-ietf-poly1305, password: 688e91cb-6352-4171-bf7a-73b0b0c0cf73}
+  - {name: "California, SS - B Group", server: bgroup.node5.s.nodelist-gfwairport1.download, port: 50001, type: ss, cipher: chacha20-ietf-poly1305, password: 688e91cb-6352-4171-bf7a-73b0b0c0cf73}
+  - {name: "Tokyo, V2 - B Group", server: bgroup.node1.v.nodelist-gfwairport1.download, port: 50001, type: vmess, uuid: 688e91cb-6352-4171-bf7a-73b0b0c0cf73, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
+  - {name: "Incheon, V2 - B Group", server: bgroup.node2.v.nodelist-gfwairport1.download, port: 50001, type: vmess, uuid: 688e91cb-6352-4171-bf7a-73b0b0c0cf73, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
+  - {name: "🇸🇬 Singapore, V2 - B Group", server: bgroup.node3.v.nodelist-gfwairport1.download, port: 50001, type: vmess, uuid: 688e91cb-6352-4171-bf7a-73b0b0c0cf73, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
+  - {name: "🇭🇰 Hongkong, V2 - B Group", server: bgroup.node4.v.nodelist-gfwairport1.download, port: 50001, type: vmess, uuid: 688e91cb-6352-4171-bf7a-73b0b0c0cf73, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
+  - {name: "California, V2 - B Group", server: bgroup.node5.v.nodelist-gfwairport1.download, port: 50001, type: vmess, uuid: 688e91cb-6352-4171-bf7a-73b0b0c0cf73, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
+  - {name: 距离下次重置剩余：5 天 2, server: aws-hk01.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: aws-hk01.aikun.online, skip-cert-verify: false}
+  - {name: 🇸🇬 用不了就更新订阅, server: aws-hk01.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: aws-hk01.aikun.online, skip-cert-verify: false}
+  - {name: 🇭🇰 香港 01（一区）, server: aws-hk01.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: aws-hk01.aikun.online, skip-cert-verify: false}
+  - {name: 🇭🇰 香港 02（一区）, server: aws-hk02.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: aws-hk02.aikun.online, skip-cert-verify: false}
+  - {name: 🇭🇰 香港 03（一区）, server: aws-hk03.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: aws-hk03.aikun.online, skip-cert-verify: false}
+  - {name: 🇯🇵 日本 01（一区）, server: aws-jp.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: aws-jp.aikun.online, skip-cert-verify: false}
+  - {name: 🇯🇵 日本 02（一区）, server: aws-jp.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: aws-jp.aikun.online, skip-cert-verify: false}
+  - {name: 🇯🇵 日本 03（一区）, server: aws-jp.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: aws-jp.aikun.online, skip-cert-verify: false}
+  - {name: 🇸🇬 新加坡 01（一区）, server: aws-sg.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: aws-sg.aikun.online, skip-cert-verify: false}
+  - {name: 🇸🇬 新加坡 02（一区）, server: aws-sg.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: aws-sg.aikun.online, skip-cert-verify: false}
+  - {name: 🇸🇬 新加坡 03（一区）, server: aws-sg.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: aws-sg.aikun.online, skip-cert-verify: false}
+  - {name: 🇨🇳 台湾 01 高速, server: cdn.twnct.6641634715834932.me, port: 7045, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: cdn.twnct.6641634715834932.me, skip-cert-verify: false}
+  - {name: 🇺🇸 美国圣何塞 01 （0.1x）, server: tempest-us.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: s-jp01.aikun.online, skip-cert-verify: false}
+  - {name: 🇺🇸 美国圣何塞 02 （0.1x）, server: tempest-us.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: s-jp01.aikun.online, skip-cert-verify: false}
+  - {name: 🇺🇸 美国圣何塞 03 （0.1x）, server: tempest-us.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: s-jp01.aikun.online, skip-cert-verify: false}
+  - {name: 🇸🇬 新加坡  01 （二区）, server: az-sg.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: az-sg.aikun.online, skip-cert-verify: false}
+  - {name: 🇸🇬 新加坡  02 （二区）, server: az-sg.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: az-sg.aikun.online, skip-cert-verify: false}
+  - {name: 🇸🇬 新加坡 03 （二区）, server: az-sg.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: az-sg.aikun.online, skip-cert-verify: false}
+  - {name: 🇯🇵 日本 01（二区）, server: az-jp.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: az-jp.aikun.online, skip-cert-verify: false}
+  - {name: 🇯🇵 日本 02（二区）, server: az-jp.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: az-jp.aikun.online, skip-cert-verify: false}
+  - {name: 🇯🇵 日本 03（二区）, server: az-jp.aikun.online, port: 443, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: az-jp.aikun.online, skip-cert-verify: false}
+  - {name: 🇫🇷 法国, server: faguo.aikun.online, port: 50407, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: faguo.aikun.online, skip-cert-verify: false}
+  - {name: 🇹🇷 土耳其, server: 94.131.108.128, port: 50407, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: tr.aikun.online, skip-cert-verify: false}
+  - {name: 🇬🇧 英国, server: uk.aikun.online, port: 50407, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: uk.aikun.online, skip-cert-verify: false}
+  - {name: 🇷🇺 俄罗斯, server: els.aikun.online, port: 50407, type: trojan, password: 0dde6644-795d-419a-824c-5aa1f379c15e, sni: els.aikun.online, skip-cert-verify: false}
+  - {name: 🇸🇬 新加坡 01, server: shdx.aikun.online, port: 59043, type: ss, cipher: aes-128-gcm, password: 0dde6644-795d-419a-824c-5aa1f379c15e}
+  - {name: 🇸🇬 新加坡 02, server: shdx.aikun.online, port: 59043, type: ss, cipher: aes-128-gcm, password: 0dde6644-795d-419a-824c-5aa1f379c15e}
+  - {name: 🇸🇬 新加坡 03, server: shdx.aikun.online, port: 59043, type: ss, cipher: aes-128-gcm, password: 0dde6644-795d-419a-824c-5aa1f379c15e}
+  - {name: 🇰🇷 韩国 01, server: shdx.aikun.online, port: 49771, type: ss, cipher: aes-128-gcm, password: 0dde6644-795d-419a-824c-5aa1f379c15e}
+  - {name: 🇰🇷 韩国 02, server: shdx.aikun.online, port: 49771, type: ss, cipher: aes-128-gcm, password: 0dde6644-795d-419a-824c-5aa1f379c15e}
+  - {name: 🇰🇷 韩国 03, server: shdx.aikun.online, port: 49771, type: ss, cipher: aes-128-gcm, password: 0dde6644-795d-419a-824c-5aa1f379c15e}
+  - {name: 距离下次重置剩余：5 天 3, server: hk1.c.e8bb3fc45ae6.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: www.microsoft.com}}
+  - {name: 三分机场.xyz 站内返利65%, server: hk1.c.e8bb3fc45ae6.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: www.microsoft.com}}
+  - {name: 🇭🇰 香港高速接入点-01, server: hk1.c.e8bb3fc45ae6.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: www.microsoft.com}}
+  - {name: 🇭🇰 香港高速接入点-02, server: hk2.c2bfe79372be.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: www.microsoft.com}}
+  - {name: 🇭🇰 香港高速接入点-03, server: hk3.af49c4e4c2ef.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: www.microsoft.com}}
+  - {name: 🇭🇰 香港高速接入点-04, server: hk4.af49c4e4c2ef.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: www.microsoft.com}}
+  - {name: 🇭🇰 香港高速接入点-05, server: hk5.af49c4e4c2ef.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: www.microsoft.com}}
+  - {name: 🇭🇰 香港高速接入点-06, server: hk6.af49c4e4c2ef.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: www.microsoft.com}}
+  - {name: 🇸🇬 新加坡高速接入点-01, server: sg1.af49c4e4c2ef.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false}
+  - {name: 🇸🇬 新加坡高速接入点-02, server: sg2.af49c4e4c2ef.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false}
+  - {name: 🇸🇬 新加坡高速接入点-03, server: sg3.af49c4e4c2ef.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false}
+  - {name: 🇸🇬 新加坡高速接入点-04, server: sg4.af49c4e4c2ef.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false}
+  - {name: 🇯🇵 日本高速接入点-01, server: jp1.1f4826f463aa.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: www.microsoft.com}}
+  - {name: 🇯🇵 日本高速接入点-02, server: jp2.af49c4e4c2ef.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false}
+  - {name: 🇯🇵 日本高速接入点-03, server: jp3.af49c4e4c2ef.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false}
+  - {name: 🇯🇵 日本高速接入点-04, server: jp4.af49c4e4c2ef.sanfen004.me, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false}
+  - {name: 🇺🇸 美国高速接入点-01, server: cfcdn.sanfencdn.net, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: us1.sanfencdn.net}}
+  - {name: 🇺🇸 美国高速接入点-02, server: cfcdn.sanfencdn.net, port: 443, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: us2.sanfencdn.net}}
+  - {name: 台北高级接入点-01, server: tw1.sanfen004.me, port: 1000, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: www.microsoft.com}}
+  - {name: 台北高级接入点-02, server: tw2.sanfen004.me, port: 1000, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: www.microsoft.com}}
+  - {name: 🇭🇰 香港-80端口-01, server: hk80.8b750e3e20aa.sanfen004.me, port: 80, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-path: /zh-cn/, ws-headers: {Host: www.baidu.com}}
+  - {name: 🇭🇰 香港-80端口-02, server: hk80-2.8b750e3e20aa.sanfen004.me, port: 80, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-path: /zh-cn/, ws-headers: {Host: www.baidu.com}}
+  - {name: 🇯🇵 日本-80端口-04, server: jp80.fee68414a14e.sanfen004.me, port: 80, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-path: /zh-cn, ws-headers: {Host: www.baidu.com}}
+  - {name: 🇭🇰 5x-临时-香港-高级节点2, server: d0cd89648587.sanfen004.me, port: 16610, type: vmess, uuid: 83479f35-595c-4068-acdd-738dc7d452e0, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
+proxy-groups:
+  - name: ⚡️ 节点选择
+    type: select
+    proxies:
+      - 🇭🇰 香港手动
+      - 🇭🇰 香港自动
+      - 🇸🇬 狮城手动
+      - 🇸🇬 狮城自动
+      - 🇯🇵 日本手动
+      - 🇯🇵 日本自动
+      - 🇺🇲 美国手动
+      - 🇺🇲 美国自动
+      - 🇹🇼 台湾手动
+      - 🇨🇳 台湾自动
+      - 🇩🇪 冷门节点
+  - name: 🍟 油管视频
+    type: select
+    proxies:
+      - ⚡️ 节点选择
+      - 🏮 HappyEveryDay
+      - 🇭🇰 香港手动
+      - 🇭🇰 香港自动
+      - 🇸🇬 狮城手动
+      - 🇸🇬 狮城自动
+      - 🇯🇵 日本手动
+      - 🇯🇵 日本自动
+      - 🇺🇲 美国手动
+      - 🇺🇲 美国自动
+      - 🇹🇼 台湾手动
+      - 🇨🇳 台湾自动
+      - 🇩🇪 冷门节点
+  - name: 🧲 电报消息
+    type: select
+    proxies:
+      - ⚡️ 节点选择
+      - 🇭🇰 香港自动
+      - 🇸🇬 狮城自动 
+      - 🇯🇵 日本自动   
+      - 🇺🇲 美国自动    
+      - 🇨🇳 台湾自动  
+  - name: 🎃 Spotify
+    type: select
+    proxies: 
+      - ⚡️ 节点选择   
+      - 🇯🇵 日本自动  
+  - name: 🐵 OpenAi
+    type: select    
+    proxies:
+     - 🇭🇰 香港手动
+     - 🇯🇵 日本手动
+  - name: 🍹 TikTok
+    type: select
+    proxies:      
+      - ⚡️ 节点选择
+      - 🇭🇰 香港自动
+      - 🇸🇬 狮城自动
+      - 🇯🇵 日本自动 
+      - 🇺🇲 美国自动
+      - 🇨🇳 台湾自动
+  - name: 🎥 Netflix
+    type: select
+    proxies:
+      - ⚡️ 节点选择 
+      - 🇭🇰 香港自动    
+      - 🇸🇬 狮城自动     
+      - 🇯🇵 日本自动  
+      - 🇺🇲 美国自动     
+      - 🇨🇳 台湾自动 
+  - name: 🎥 DisneyPlus
+    type: select
+    proxies:
+      - ⚡️ 节点选择
+      - 🇭🇰 香港自动
+      - 🇸🇬 狮城自动     
+      - 🇯🇵 日本自动   
+      - 🇺🇲 美国自动
+      - 🇨🇳 台湾自动  
+  - name: 📟 国外媒体
+    type: select
+    proxies:
+      - ⚡️ 节点选择   
+      - 🇭🇰 香港自动     
+      - 🇸🇬 狮城自动
+      - 🇯🇵 日本自动 
+      - 🇺🇲 美国自动
+      - 🇨🇳 台湾自动
+      - 🇩🇪 冷门节点
+  - name: 📺 哔哩哔哩
+    type: select
+    proxies:
+      - 🏮 HappyEveryDay
+      - ⚡️ 节点选择
+      - 🇭🇰 香港自动   
+      - 🇸🇬 狮城自动
+      - 🇯🇵 日本自动
+      - 🇺🇲 美国自动
+      - 🇨🇳 台湾自动
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - ⚡️ 节点选择 
+      - 🇭🇰 香港自动  
+      - 🇸🇬 狮城自动   
+      - 🇯🇵 日本自动   
+      - 🇺🇲 美国自动
+      - 🇨🇳 台湾自动
+      - 🇩🇪 冷门节点
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - ⚡️ 节点选择
+      - 🏮 HappyEveryDay
+      - 🇭🇰 香港手动
+      - 🇭🇰 香港自动
+      - 🇸🇬 狮城手动
+      - 🇸🇬 狮城自动
+      - 🇯🇵 日本手动
+      - 🇯🇵 日本自动
+      - 🇺🇲 美国手动
+      - 🇺🇲 美国自动
+      - 🇹🇼 台湾手动
+      - 🇨🇳 台湾自动
+      - 🇩🇪 冷门节点
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - 🏮 HappyEveryDay
+      - DIRECT   
+      - 🇭🇰 香港自动   
+      - 🇸🇬 狮城自动 
+      - 🇯🇵 日本自动
+      - 🇺🇲 美国自动
+      - 🇨🇳 台湾自动
+      - 🇩🇪 冷门节点
+  - name: 🏆 Final兜底
+    type: select
+    proxies:
+      - ⚡️ 节点选择
+      - 🏮 HappyEveryDay
+      - 🇭🇰 香港手动
+      - 🇭🇰 香港自动
+      - 🇸🇬 狮城手动
+      - 🇸🇬 狮城自动
+      - 🇯🇵 日本手动
+      - 🇯🇵 日本自动
+      - 🇺🇲 美国手动
+      - 🇺🇲 美国自动
+      - 🇹🇼 台湾手动
+      - 🇨🇳 台湾自动
+      - 🇩🇪 冷门节点
+      - DIRECT 
+  - name: 🚫 拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - ⚡️ 节点选择
+ 
+  - name: 🇭🇰 香港自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇭🇰 Hongkong, Tj - B Group
+      - 🇭🇰 Hongkong, SS - B Group
+      - 🇭🇰 Hongkong, V2 - B Group
+      - 🇭🇰 香港 01（一区）
+      - 🇭🇰 香港 02（一区）
+      - 🇭🇰 香港 03（一区）
+      - 🇭🇰 香港高速接入点-01
+      - 🇭🇰 香港高速接入点-02
+      - 🇭🇰 香港高速接入点-03
+      - 🇭🇰 香港高速接入点-04
+      - 🇭🇰 香港高速接入点-05
+      - 🇭🇰 香港高速接入点-06
+      - 🇭🇰 香港-80端口-01
+      - 🇭🇰 香港-80端口-02
+      - 🇭🇰 5x-临时-香港-高级节点2
+  - name: 🇯🇵 日本自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - Tokyo, Tj - B Group
+      - Tokyo, SS - B Group
+      - Tokyo, V2 - B Group
+      - 🇯🇵 日本 01（一区）
+      - 🇯🇵 日本 02（一区）
+      - 🇯🇵 日本 03（一区）
+      - 🇯🇵 日本 01（二区）
+      - 🇯🇵 日本 02（二区）
+      - 🇯🇵 日本 03（二区）
+      - 🇯🇵 日本高速接入点-01
+      - 🇯🇵 日本高速接入点-02
+      - 🇯🇵 日本高速接入点-03
+      - 🇯🇵 日本高速接入点-04
+      - 🇯🇵 日本-80端口-04
+  - name: 🇺🇲 美国自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - California, Tj - B Group
+      - California, SS - B Group
+      - California, V2 - B Group
+      - 🇺🇸 美国圣何塞 01 （0.1x）
+      - 🇺🇸 美国圣何塞 02 （0.1x）
+      - 🇺🇸 美国圣何塞 03 （0.1x）
+      - 🇺🇸 美国高速接入点-01
+      - 🇺🇸 美国高速接入点-02
+  - name: 🇨🇳 台湾自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇨🇳 台湾 01 高速
+      - 台北高级接入点-01
+      - 台北高级接入点-02
+  - name: 🇸🇬 狮城自动
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 🇸🇬 Singapore, Tj - B Group
+      - 🇸🇬 Singapore, SS - B Group
+      - 🇸🇬 Singapore, V2 - B Group
+      - 🇸🇬 新加坡 01（一区）
+      - 🇸🇬 新加坡 02（一区）
+      - 🇸🇬 新加坡 03（一区）
+      - 🇸🇬 新加坡  01 （二区）
+      - 🇸🇬 新加坡  02 （二区）
+      - 🇸🇬 新加坡 03 （二区）
+      - 🇸🇬 新加坡 01
+      - 🇸🇬 新加坡 02
+      - 🇸🇬 新加坡 03
+      - 🇸🇬 新加坡高速接入点-01
+      - 🇸🇬 新加坡高速接入点-02
+      - 🇸🇬 新加坡高速接入点-03
+      - 🇸🇬 新加坡高速接入点-04
+  - name: 🇩🇪 冷门节点
+    type: select
+    proxies:
+      - 距离下次重置剩余：5 天
+      - Incheon, Tj - B Group
+      - Incheon, SS - B Group
+      - Incheon, V2 - B Group
+      - 距离下次重置剩余：5 天 2
+      - 🇸🇬 用不了就更新订阅
+      - 🇫🇷 法国
+      - 🇹🇷 土耳其
+      - 🇬🇧 英国
+      - 🇷🇺 俄罗斯
+      - 🇰🇷 韩国 01
+      - 🇰🇷 韩国 02
+      - 🇰🇷 韩国 03
+      - 距离下次重置剩余：5 天 3
+      - 三分机场.xyz 站内返利65%
+  - name: 🇭🇰 香港手动
+    type: select
+    proxies:
+      - 🇭🇰 Hongkong, Tj - B Group
+      - 🇭🇰 Hongkong, SS - B Group
+      - 🇭🇰 Hongkong, V2 - B Group
+      - 🇭🇰 香港 01（一区）
+      - 🇭🇰 香港 02（一区）
+      - 🇭🇰 香港 03（一区）
+      - 🇭🇰 香港高速接入点-01
+      - 🇭🇰 香港高速接入点-02
+      - 🇭🇰 香港高速接入点-03
+      - 🇭🇰 香港高速接入点-04
+      - 🇭🇰 香港高速接入点-05
+      - 🇭🇰 香港高速接入点-06
+      - 🇭🇰 香港-80端口-01
+      - 🇭🇰 香港-80端口-02
+      - 🇭🇰 5x-临时-香港-高级节点2
+  - name: 🇯🇵 日本手动
+    type: select
+    proxies:
+      - Tokyo, Tj - B Group
+      - Tokyo, SS - B Group
+      - Tokyo, V2 - B Group
+      - 🇯🇵 日本 01（一区）
+      - 🇯🇵 日本 02（一区）
+      - 🇯🇵 日本 03（一区）
+      - 🇯🇵 日本 01（二区）
+      - 🇯🇵 日本 02（二区）
+      - 🇯🇵 日本 03（二区）
+      - 🇯🇵 日本高速接入点-01
+      - 🇯🇵 日本高速接入点-02
+      - 🇯🇵 日本高速接入点-03
+      - 🇯🇵 日本高速接入点-04 #     - 🇯🇵 日本-80端口-04
+  - name: 🇺🇲 美国手动
+    type: select
+    proxies:
+      - California, Tj - B Group
+      - California, SS - B Group
+      - California, V2 - B Group
+      - 🇺🇸 美国圣何塞 01 （0.1x）
+      - 🇺🇸 美国圣何塞 02 （0.1x）
+      - 🇺🇸 美国圣何塞 03 （0.1x）
+      - 🇺🇸 美国高速接入点-01
+      - 🇺🇸 美国高速接入点-02
+  - name: 🇸🇬 狮城手动
+    type: select
+    proxies:
+      - 🇸🇬 Singapore, Tj - B Group
+      - 🇸🇬 Singapore, SS - B Group
+      - 🇸🇬 Singapore, V2 - B Group
+      - 🇸🇬 新加坡 01（一区）
+      - 🇸🇬 新加坡 02（一区）
+      - 🇸🇬 新加坡 03（一区）
+      - 🇸🇬 新加坡  01 （二区）
+      - 🇸🇬 新加坡  02 （二区）
+      - 🇸🇬 新加坡 03 （二区）
+      - 🇸🇬 新加坡 01
+      - 🇸🇬 新加坡 02
+      - 🇸🇬 新加坡 03
+      - 🇸🇬 新加坡高速接入点-01
+      - 🇸🇬 新加坡高速接入点-02
+      - 🇸🇬 新加坡高速接入点-03
+      - 🇸🇬 新加坡高速接入点-04
+  - name: 🇹🇼 台湾手动
+    type: select
+    proxies:
+      - 🇨🇳 台湾 01 高速
+      - 台北高级接入点-01
+      - 台北高级接入点-02
+  - name: 🏮 HappyEveryDay
+    type: select
+    proxies:
+      - DIRECT  
+# 规则地址🎶 TikTok
+c: &c
+  type: http
+  behavior: classical
+  interval: 86400
+
+rule-providers:
+
+  Lan:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Lan/Lan.yaml"
+    path: ./ruleset/Lan.yaml
+
+  Game:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Game/Game.yaml"
+    path: ./rule_providers/Game.yaml
+
+  Inside1:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Direct/Direct.yaml"
+    path: ./ruleset/Inside1.yaml      
+
+  ZhiHuAD:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ZhihuAds/ZhihuAds.yaml"
+    path: ./ruleset/ZhiHuAD.yaml
+
+  AD:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AdvertisingLite/AdvertisingLite.yaml"
+    path: ./ruleset/ADLite.yaml
+
+  GitHub:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml"
+    path: ./rule_providers/GitHub.yaml
+
+  Telegram:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml"
+    path: ./rule_providers/Telegram.yaml
+    
+  NETFLIX:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Netflix/Netflix.yaml"
+    path: ./rule_providers/NETFLIX.yaml
+    
+  Disney:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Disney/Disney.yaml"
+    path: ./rule_providers/Disney.yaml  
+
+  PrimeVideo:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AmazonPrimeVideo/AmazonPrimeVideo.yaml"
+    path: ./rule_providers/PrimeVideo.yaml   
+    
+  Spotify:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Spotify/Spotify.yaml"
+    path: ./rule_providers/Spotify.yaml   
+    
+  YouTube:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
+    path: ./rule_providers/YouTube.yaml
+    
+  YouTubeMusic:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml"
+    path: ./rule_providers/YouTubeMusic.yaml
+    
+  TikTok:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/TikTok/TikTok.yaml"
+    path: ./rule_providers/TikTok.yaml
+     
+  Google:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml"
+    path: ./rule_providers/Google.yaml
+    
+  GoogleFCM:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GoogleFCM/GoogleFCM.yaml"
+    path: ./rule_providers/GoogleFCM.yaml
+
+  Apple:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple.yaml"
+    path: ./rule_providers/Apple.yaml
+    
+  Microsoft:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml"
+    path: ./rule_providers/Microsoft.yaml
+    
+  Global:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Global/Global_Classical.yaml"
+    path: ./ruleset/Global.yaml
+
+  ChinaMax_Classical:
+    <<: *c
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml"
+    path: ./ruleset/ChinaMax_Classical.yaml
+    
+  OpenAi:
+    <<: *c
+    url: "https://gist.githubusercontent.com/lovecxe/e2879785881a3304d4dafd6d4107bcfe/raw/OpenAi.yaml"
+    path: ./ruleset/OpenAi.yaml
+rules:
+  - RULE-SET,Lan,🏮 HappyEveryDay
+  - RULE-SET,Game,🎮 游戏平台
+  - RULE-SET,Inside1,🏮 HappyEveryDay
+  - RULE-SET,AD,🚫 拦截
+  - RULE-SET,ZhiHuAD,🚫 拦截
+  - RULE-SET,GitHub,⚡️ 节点选择
+  - RULE-SET,OpenAi,🐵 OpenAi
+  - RULE-SET,Telegram,🧲 电报消息
+  - RULE-SET,NETFLIX,🎥 Netflix
+  - RULE-SET,Disney,🎥 DisneyPlus
+#  - RULE-SET,PrimeVideo,📺 PrimeVideo
+  - RULE-SET,Spotify,🎃 Spotify
+  - RULE-SET,YouTube,🍟 油管视频
+  - RULE-SET,YouTubeMusic,🍟 油管视频
+  - RULE-SET,TikTok,🍹 TikTok
+  - RULE-SET,Google,📟 国外媒体
+  - RULE-SET,GoogleFCM,📟 国外媒体
+  - RULE-SET,Apple,🍎 苹果服务
+#  - RULE-SET,Microsoft,🧩 Microsoft
+  - RULE-SET,Global,⚡️ 节点选择
+  - RULE-SET,ChinaMax_Classical,🏮 HappyEveryDay
+  - GEOIP,CN,🏮 HappyEveryDay
+  - MATCH,⚡️ 节点选择
+
+
+
+
+
+
+
